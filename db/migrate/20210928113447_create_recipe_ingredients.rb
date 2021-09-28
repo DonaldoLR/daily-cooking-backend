@@ -3,6 +3,8 @@ class CreateRecipeIngredients < ActiveRecord::Migration[6.1]
     create_table :recipe_ingredients do |t|
       t.belongs_to :recipe
       t.belongs_to :ingredient
+      t.integer :quantity
+      t.string :measure_unit
       t.timestamps
     end
   end

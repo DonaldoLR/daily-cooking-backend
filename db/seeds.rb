@@ -23,5 +23,5 @@ chicken_vesuvio = Recipe.create!(name: 'Chicken Vesuvio', image: 'https://www.se
 puts "-- ✅ Done Seeding Recipes --"
 
 puts "-- 👨‍💻 Seeding Recipe Ingredients --"
-chicken_vesuvio_olive_oil = RecipeIngredient.create!(ingredient: olive_oil, recipe: chicken_vesuvio)
+chicken_vesuvio_olive_oil = RecipeIngredient.create!(ingredient: olive_oil, recipe: chicken_vesuvio, quantity: 0.5, measure_unit: 'cup')
 puts "-- ✅ Done Seeding Recipe Ingredients--"
