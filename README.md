@@ -1,24 +1,33 @@
-# README
+# Daily Cooking Helper
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+Daily Cooking Helper helps users view recipes and allows them to add all required ingredients to their cart.
 
-* Ruby version
+## User Stories
 
-* System dependencies
+- A visitor should get a new recipe every time they refresh the website so they do not have to decide what to cook
+- A visitor should be able to view the listed ingredients and tools needed, instructions and how long it will take
+- A visitor should be able to add all the required ingredients and or tools to their cart
 
-* Configuration
+## MVP
 
-* Database creation
+- User can view a recipe
+- User can skip recipes
 
-* Database initialization
+## Stretch Feature
 
-* How to run the test suite
+- User can filter for certain diets / lifestyles
+- User can add a recipes' ingredients, tools to a cart
+- Users can save recipes that they liked
 
-* Services (job queues, cache servers, search engines, etc.)
+## ERD
 
-* Deployment instructions
+### Main
 
-* ...
+- recipe -< RecipeItems >- ingredients
+
+### Stretch
+
+- recipe -< RecipeTools >- tools
+- User -< CartItems >- Items
