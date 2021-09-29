@@ -16,6 +16,7 @@ puts "-- ✅ Old Data Destroyed --"
 
 puts "-- 👨‍💻 Seeding Ingredients --"
 olive_oil = Ingredient.create!(name: 'Olive Oil', image: 'https://www.edamam.com/food-img/4d6/4d651eaa8a353647746290c7a9b29d84.jpg');
+garlic = Ingredient.create!(name: 'Garlic', image: 'https://www.edamam.com/food-img/6ee/6ee142951f48aaf94f4312409f8d133d.jpg');
 puts "-- ✅ Done Seeding Ingredients --"
 
 puts "-- 👨‍💻 Seeding Recipes --"
@@ -23,5 +24,7 @@ chicken_vesuvio = Recipe.create!(name: 'Chicken Vesuvio', image: 'https://www.se
 puts "-- ✅ Done Seeding Recipes --"
 
 puts "-- 👨‍💻 Seeding Recipe Ingredients --"
-chicken_vesuvio_olive_oil = RecipeIngredient.create!(ingredient: olive_oil, recipe: chicken_vesuvio, quantity: 2, measure_unit: 'cup')
+chicken_vesuvio_olive_oil = RecipeIngredient.create!(ingredient: olive_oil, recipe: chicken_vesuvio, quantity: 2, measure_unit: 'cup');
+chicken_vesuvio_garlic = RecipeIngredient.create!(ingredient: garlic, recipe: chicken_vesuvio, quantity: 5, measure_unit: 'clove');
+
 puts "-- ✅ Done Seeding Recipe Ingredients--"

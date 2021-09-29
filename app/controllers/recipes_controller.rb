@@ -6,12 +6,6 @@ class RecipesController < ApplicationController
     
     def show 
         @recipe = find_recipe
-        # @recipe.ingredients.select('ingredients.*, recipe_ingredients.quantity').each do |ingredient|
-        #     puts ingredient.quantity
-        #     puts ingredient.name
-
-        #     @quantity = ingredient.quantity
-        # end
         render json: @recipe, status: :ok
     end
 
