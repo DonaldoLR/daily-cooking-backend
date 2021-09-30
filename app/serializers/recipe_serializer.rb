@@ -1,11 +1,10 @@
 class RecipeSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :image, :instructions, :ingredients_with_quantities 
+  attributes :id, :name, :description, :image, :instructions, :ingredients_with_additional_data
 
   has_many :ingredients
 
-  def ingredients_with_quantities
+  def ingredients_with_additional_data
     ingredients = self.object.ingredients.includes(:recipe_ingredients)
-     
     ingredients_array = ingredients.map do |ingredient| 
         additional_data = ingredient.recipe_ingredients.where(recipe_id: self.object.id).limit(1).first
         quantity = additional_data.ingredient_quantity
