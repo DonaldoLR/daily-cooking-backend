@@ -32,9 +32,6 @@ class RecipesController < ApplicationController
         render json: {}
     end
 
-
-
-
     private 
     def find_recipe
         Recipe.find_by(id: params[:id])
