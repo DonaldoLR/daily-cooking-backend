@@ -1,7 +1,7 @@
 class RecipeSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :image, :instructions, :ingredients_with_additional_data
 
-  has_many :ingredients
+  # has_many :ingredients
 
   def ingredients_with_additional_data
     ingredients = self.object.ingredients.includes(:recipe_ingredients)
