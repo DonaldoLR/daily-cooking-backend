@@ -9,7 +9,7 @@ class RecipeSerializer < ActiveModel::Serializer
         additional_data = ingredient.recipe_ingredients.where(recipe_id: self.object.id).limit(1).first
         quantity = additional_data.ingredient_quantity
         ingredient_description = additional_data.ingredient_description
-        {name: ingredient.name, image: ingredient.image, quantity: quantity, ingredient_description: ingredient_description}
+        {id: ingredient.id, name: ingredient.name, image: ingredient.image, ingredient_quantity: quantity, ingredient_description: ingredient_description}
     end
     ingredients_array
   end
