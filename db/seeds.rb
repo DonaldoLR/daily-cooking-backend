@@ -15,8 +15,42 @@ RecipeIngredient.destroy_all
 puts "-- ✅ Old Data Destroyed --"
 
 puts "-- 👨‍💻 Seeding Ingredients --"
+
+# Oils
 olive_oil = Ingredient.create!(name: 'Olive Oil', image: 'https://www.edamam.com/food-img/4d6/4d651eaa8a353647746290c7a9b29d84.jpg');
+
+# Vegetables
 garlic = Ingredient.create!(name: 'Garlic', image: 'https://www.edamam.com/food-img/6ee/6ee142951f48aaf94f4312409f8d133d.jpg');
+russet_potatoes = Ingredient.create!(name: 'Russet Potatoes', image: 'https://www.edamam.com/food-img/71b/71b3756ecfd3d1efa075874377038b67.jpg');
+parsley = Ingredient.create!(name: 'Parsley', image: 'https://www.edamam.com/food-img/46a/46a132e96626d7989b4d6ed8c91f4da0.jpg');
+frozen_peas = Ingredient.create!(name: 'Frozen Peas', image: 'https://www.edamam.com/food-img/c91/c9130a361d5c5b279bf48c69e2466ec2.jpg');
+onion = Ingredient.create!(name: 'Onion', image: 'https://www.edamam.com/food-img/205/205e6bf2399b85d34741892ef91cc603.jpg');
+anaheim_pepper = Ingredient.create!(name: 'Anaheim Pepper', image: 'https://www.edamam.com/food-img/73f/73ff2eeb21372fe15b0ec51f9ecf368d.jpeg');
+
+# Poultry
+chicken = Ingredient.create!(name: 'Chicken', image: 'https://www.edamam.com/food-img/d33/d338229d774a743f7858f6764e095878.jpg');
+chicken_drumsticks = Ingredient.create!(name: 'Chicken Drumsticks', image: 'https://www.edamam.com/food-img/491/4916353c22bd1ac381ac81d55597ddbe.jpg');
+chicken_thighs = Ingredient.create!(name: 'Chicken Thighs', image: 'https://www.edamam.com/food-img/007/00792642367e1f55de680762f85cfb3b.jpg');
+
+# Wines
+white_wine = Ingredient.create!(name: 'White Wine', image: 'https://www.edamam.com/food-img/a71/a718cf3c52add522128929f1f324d2ab.jpg');
+
+# Canned Soup
+chicken_stock = Ingredient.create!(name: 'Chicken Stock', image: 'https://www.edamam.com/food-img/26a/26a10c4cb4e07bab54d8a687ef5ac7d8.jpg');
+
+# Condiments and Sauces
+dried_oregano = Ingredient.create!(name: 'Dried Oregano', image: 'https://www.edamam.com/food-img/1b0/1b0eaffb1c261606e0d82fed8e9747a7.jpg');
+salt = Ingredient.create!(name: 'Salt', image: 'https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg');
+pepper = Ingredient.create!(name: 'Pepper', image: 'https://www.edamam.com/food-img/c6e/c6e5c3bd8d3bc15175d9766971a4d1b2.jpg');
+black_pepper = Ingredient.create!(name: 'Black Pepper', image: 'https://www.edamam.com/food-img/c6e/c6e5c3bd8d3bc15175d9766971a4d1b2.jpg');
+paprika = Ingredient.create!(name: 'Paprika', image: 'https://www.edamam.com/food-img/474/474d63763b9d8b9da98c5f43a114648c.jpg');
+
+# Dairy
+sour_cream = Ingredient.create!(name: 'Sour Cream', image: 'https://www.edamam.com/food-img/f9d/f9d6183267b041b0aff9a10b89c9c15f.jpg');
+
+# Grains
+flour = Ingredient.create!(name: 'Flour', image: 'https://www.edamam.com/food-img/b4c/b4c739e76a6f2172b7ad49d0aa41d5aa.jpg');
+
 puts "-- ✅ Done Seeding Ingredients --"
 
 puts "-- 👨‍💻 Seeding Recipes --"
@@ -27,9 +61,32 @@ chicken_paprikash = Recipe.create!(name: 'Chicken Paprikash', description: "Goin
 puts "-- ✅ Done Seeding Recipes --"
 
 puts "-- 👨‍💻 Seeding Recipe Ingredients --"
-chicken_vesuvio_olive_oil = RecipeIngredient.create!(ingredient: olive_oil, recipe: chicken_vesuvio, quantity: 2, measure_unit: 'cup');
-chicken_vesuvio_garlic = RecipeIngredient.create!(ingredient: garlic, recipe: chicken_vesuvio, quantity: 5, measure_unit: 'clove');
 
-chicken_paprikash_olive_oil = RecipeIngredient.create!(ingredient: olive_oil, recipe: chicken_paprikash, quantity: 10, measure_unit: 'cup');
-chicken_paprikash_garlic = RecipeIngredient.create!(ingredient: olive_oil, recipe: chicken_paprikash, quantity: 10, measure_unit: 'cloves');
+# Chicken Vesuvio
+RecipeIngredient.create!(ingredient: olive_oil, recipe: chicken_vesuvio, quantity: 0.5, measure_unit: 'cup');
+RecipeIngredient.create!(ingredient: garlic, recipe: chicken_vesuvio, quantity: 5, measure_unit: 'clove');
+RecipeIngredient.create!(ingredient: russet_potatoes, recipe: chicken_vesuvio, quantity: 2, measure_unit: 'whole');
+RecipeIngredient.create!(ingredient: chicken, recipe: chicken_vesuvio, quantity: 3.5, measure_unit: 'pound');
+RecipeIngredient.create!(ingredient: white_wine, recipe: chicken_vesuvio, quantity: 0.75, measure_unit: 'cup');
+RecipeIngredient.create!(ingredient: chicken_stock, recipe: chicken_vesuvio, quantity: 0.75, measure_unit: 'cup');
+RecipeIngredient.create!(ingredient: parsley, recipe: chicken_vesuvio, quantity: 3, measure_unit: 'tablespoon');
+RecipeIngredient.create!(ingredient: dried_oregano, recipe: chicken_vesuvio, quantity: 1, measure_unit: 'tablespoon');
+RecipeIngredient.create!(ingredient: salt, recipe: chicken_vesuvio, quantity: 1, measure_unit: 'pinch');
+RecipeIngredient.create!(ingredient: pepper, recipe: chicken_vesuvio, quantity: 1, measure_unit: 'pinch');
+RecipeIngredient.create!(ingredient: frozen_peas, recipe: chicken_vesuvio, quantity: 1, measure_unit: 'cup');
+
+# Chicken Paprikash
+RecipeIngredient.create!(ingredient: chicken_drumsticks, recipe: chicken_paprikash, quantity: 640, measure_unit: 'gram');
+RecipeIngredient.create!(ingredient: chicken_thighs, recipe: chicken_paprikash, quantity: 640, measure_unit: 'gram');
+RecipeIngredient.create!(ingredient: salt, recipe: chicken_paprikash, quantity: 0.5, measure_unit: 'teaspoon');
+RecipeIngredient.create!(ingredient: black_pepper, recipe: chicken_paprikash, quantity: 0.25, measure_unit: 'teaspoon');
+RecipeIngredient.create!(ingredient: olive_oil, recipe: chicken_paprikash, quantity: 1, measure_unit: 'tablespoon');
+RecipeIngredient.create!(ingredient: onion, recipe: chicken_paprikash, quantity: 1, measure_unit: 'whole');
+RecipeIngredient.create!(ingredient: anaheim_pepper, recipe: chicken_paprikash, quantity: 1, measure_unit: 'whole');
+RecipeIngredient.create!(ingredient: paprika, recipe: chicken_paprikash, quantity: 0.25, measure_unit: 'cup');
+RecipeIngredient.create!(ingredient: chicken_stock, recipe: chicken_paprikash, quantity: 1, measure_unit: 'cup');
+RecipeIngredient.create!(ingredient: salt, recipe: chicken_paprikash, quantity: 0.5, measure_unit: 'teaspoon');
+RecipeIngredient.create!(ingredient: sour_cream, recipe: chicken_paprikash, quantity: 0.5, measure_unit: 'cup');
+RecipeIngredient.create!(ingredient: flour, recipe: chicken_paprikash, quantity: 1, measure_unit: 'tablespoon');
+
 puts "-- ✅ Done Seeding Recipe Ingredients--"
